@@ -16,7 +16,13 @@ import { OrderInfo } from '../order-info';
 import { IngredientDetails } from '../ingredient-details';
 import { useEffect } from 'react';
 import { useDispatch } from '../../services/store';
-import { useLocation, useNavigate, Route, Routes } from 'react-router-dom';
+import {
+  useLocation,
+  useNavigate,
+  Route,
+  Routes,
+  useParams
+} from 'react-router-dom';
 import { ProtectedRoute } from '../protected-route/protected-route';
 import { getIngredients } from '../../services/slices/ingredientsSlice';
 import { checkingUserAuth } from '../../services/slices/userSlice';
@@ -38,6 +44,15 @@ const App = () => {
   useEffect(() => {
     dispatch(checkingUserAuth());
   }, [dispatch]);
+
+  const OrderModalWrapper = () => {
+    const { number } = useParams();
+    return (
+      <Modal title={`#${number}`} onClose={handleCloseModal}>
+        <OrderInfo />
+      </Modal>
+    );
+  };
 
   return (
     <div className={styles.app}>
@@ -118,14 +133,7 @@ const App = () => {
       }
       {background && (
         <Routes>
-          <Route
-            path='/ingredients/:id'
-            element={
-              <Modal title='Детали ингредиента' onClose={handleCloseModal}>
-                <IngredientDetails />
-              </Modal>
-            }
-          />
+          <Route path='/feed/:number' element={<OrderModalWrapper />} />
 
           <Route
             path='/feed/:number'
