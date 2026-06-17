@@ -133,7 +133,6 @@ const App = () => {
       }
       {background && (
         <Routes>
-
           <Route
             path='/ingredients/:id'
             element={
