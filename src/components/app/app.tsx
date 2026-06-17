@@ -133,16 +133,16 @@ const App = () => {
       }
       {background && (
         <Routes>
-          <Route path='/feed/:number' element={<OrderModalWrapper />} />
 
           <Route
-            path='/feed/:number'
+            path='/ingredients/:id'
             element={
-              <Modal title='Информация о заказе' onClose={handleCloseModal}>
-                <OrderInfo />
+              <Modal title='Детали ингредиента' onClose={handleCloseModal}>
+                <IngredientDetails />
               </Modal>
             }
           />
+          <Route path='/feed/:number' element={<OrderModalWrapper />} />
 
           <Route
             path='/profile/orders/:number'
