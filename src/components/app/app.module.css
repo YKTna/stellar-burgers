@@ -6,13 +6,6 @@
   color: #f2f2f3;
 }
 
-.ingridientDetail {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 130px;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }

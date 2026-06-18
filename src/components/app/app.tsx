@@ -4,6 +4,7 @@ import {
   NotFound404,
   Feed,
   Register,
+  IngredientDetail,
   ForgotPassword,
   ResetPassword,
   Profile,
@@ -116,17 +117,7 @@ const App = () => {
             }
           />
 
-          <Route
-            path='/ingredients/:id'
-            element={
-              <div className={styles.ingridientDetail}>
-                <h3 className='text text_type_main-large'>
-                  Детали ингредиента
-                </h3>
-                <IngredientDetails />
-              </div>
-            }
-          />
+          <Route path='/ingredient/:id' element={<IngredientDetail />} />
           <Route path='/feed/:number' element={<OrderInfo />} />
 
           <Route
