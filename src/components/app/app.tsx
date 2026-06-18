@@ -4,14 +4,13 @@ import {
   NotFound404,
   Feed,
   Register,
-  IngredientDetail,
   ForgotPassword,
   ResetPassword,
   Profile,
   ProfileOrders
 } from '@pages';
 import { Modal } from '../modal';
-import { AppHeader } from '@components';
+import { AppHeader, IngredientDetail } from '@components';
 import styles from './app.module.css';
 import { OrderInfo } from '../order-info';
 import { IngredientDetails } from '../ingredient-details';

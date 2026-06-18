@@ -10,5 +10,6 @@ export * from './modal';
 export * from './order-card';
 export * from './order-info';
 export * from './order-status';
+export * from './ingridient';
 export * from './orders-list';
 export * from './profile-menu';
