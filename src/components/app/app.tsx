@@ -119,9 +119,12 @@ const App = () => {
           <Route
             path='/ingredients/:id'
             element={
-              <Modal title='Детали ингредиента' onClose={handleCloseModal}>
+              <div className={styles.ingridientDetail}>
+                <h3 className='text text_type_main-large'>
+                  Детали ингредиента
+                </h3>
                 <IngredientDetails />
-              </Modal>
+              </div>
             }
           />
           <Route path='/feed/:number' element={<OrderInfo />} />
