@@ -116,7 +116,14 @@ const App = () => {
             }
           />
 
-          <Route path='/ingredients/:id' element={<IngredientDetails />} />
+          <Route
+            path='/ingredients/:id'
+            element={
+              <Modal title='Детали ингредиента' onClose={handleCloseModal}>
+                <IngredientDetails />
+              </Modal>
+            }
+          />
           <Route path='/feed/:number' element={<OrderInfo />} />
 
           <Route
