@@ -55,6 +55,7 @@ test.describe('Страница конструктора бургера', () => 
 
     await expect(modal).toBeVisible();
     await expect(modal.getByTestId('ingredient-details')).toBeVisible();
+    await expect(modal.getByTestId('ingredient-details')).toContainText('Краторная булка N-200iКалории, ккал420Белки, г80Жиры, г24Углеводы, г53');
   });
 
   test('закрывает модальное окно ингредиента по клику на крестик', async ({
