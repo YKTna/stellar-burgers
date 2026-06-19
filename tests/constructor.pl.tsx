@@ -134,15 +134,16 @@ test.describe('Страница конструктора бургера', () => 
     await expect(page.getByTestId('constructor-ingredient-item')).toHaveCount(1);
 
     await expect(page.getByTestId('modal')).toHaveCount(0);
-    await expect(page.getByTestId('modal-title')).toHaveCount(0);
+    await expect(page.getByTestId('order-title')).toHaveCount(0);
 
     await page.getByRole('button', { name: 'Оформить заказ' }).click();
 
     const modal = page.getByTestId('modal');
 
     await expect(modal).toBeVisible();
-    const modalTitle = modal.getByTestId('modal-title');
-    await expect(modalTitle).toBeVisible();
+    const orderTitle = modal.getByTestId('order-title');
+    await expect(orderTitle).toBeVisible();
+    await expect(orderTitle).toContainText('12345');
 
     await expect(page.getByTestId('constructor-bun-top')).toHaveCount(0);
     await expect(page.getByTestId('constructor-bun-bottom')).toHaveCount(0);
