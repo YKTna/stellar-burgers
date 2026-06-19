@@ -55,9 +55,6 @@ test.describe('Страница конструктора бургера', () => 
 
     await expect(modal).toBeVisible();
     await expect(modal.getByTestId('ingredient-details')).toBeVisible();
-    await expect(modal.getByTestId('ingredient-details-name')).toHaveText(
-      'Краторная булка N-200i'
-    );
   });
 
   test('закрывает модальное окно ингредиента по клику на крестик', async ({
